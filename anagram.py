@@ -37,9 +37,16 @@ def check_anagram(s1, s2):
 
 def check_anagram_python(s1, s2):
     # python version of same code
-    if len(s1) != len(s2): 
+    if len(s1) != len(s2):
         return False
-    return Counter(s1) == Counter(s2) #in-built library
+    return Counter(s1) == Counter(s2)  # in-built library
+
+
+def check_anagram_python2(s1, s2):
+    # python version 2 of same code
+    if len(s1) != len(s2):
+        return False
+    return sorted(s1) == sorted(s2)  # in-built library
 
 
 print(check_anagram('salesmen', 'nameless'))
@@ -47,3 +54,6 @@ print(check_anagram('garden', 'danger'))
 
 print(check_anagram_python('salesmen', 'nameless'))
 print(check_anagram_python('garden', 'danger'))
+
+print(check_anagram_python2('salesmen', 'nameless'))
+print(check_anagram_python2('gardqn', 'danger'))
