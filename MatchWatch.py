@@ -3,13 +3,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
+match_stream_url = 'https://www.sonyliv.com/live-sport/india-tour-of-england-2022-1700000765/cricket-5th-test-day-4-4-jul-2022-1000177435?watch=true'
+
 
 def one():
     while True:
         browser = webdriver.Chrome(
             "/Users/jd/Drive J/Python Projects/chromedriver")
-        browser.get(
-            'https://www.sonyliv.com/live-sport/india-tour-of-england-2022-1700000765/cricket-5th-test-day-4-4-jul-2022-1000177435?watch=true')
+        browser.get(match_stream_url)
         time.sleep(20)
         browser.delete_all_cookies()
         browser.close()
@@ -18,7 +19,7 @@ def one():
 def two():
     browser = webdriver.Chrome(
         "/Users/jd/Drive J/Python Projects/chromedriver")
-    browser.get('https://www.sonyliv.com/live-sport/india-tour-of-england-2022-1700000765/cricket-5th-test-day-4-4-jul-2022-1000177435?watch=true')
+    browser.get(match_stream_url)
     actions = ActionChains(browser)
     while True:
         time.sleep(300)
@@ -32,8 +33,8 @@ def two():
         actions.send_keys(Keys.RETURN)
         actions.perform()
         time.sleep(.5)
-        browser.get(
-            'https://www.sonyliv.com/live-sport/india-tour-of-england-2022-1700000765/cricket-5th-test-day-4-4-jul-2022-1000177435?watch=true')
+        browser.get(match_stream_url)
+        print("working")
 
 
 two()
